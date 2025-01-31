@@ -1,10 +1,10 @@
 
-# BasicStore-TS 
+# BasicStore-TS 🛍️
 
 ## English
 A modern e-commerce store built with TypeScript and React, featuring a clean and responsive design.
 
-###  Technologies
+### 🚀 Technologies
 - **React 18** - UI Library
 - **TypeScript** - Type-safe JavaScript
 - **Vite** - Build tool and development server
@@ -12,7 +12,7 @@ A modern e-commerce store built with TypeScript and React, featuring a clean and
 - **Zustand** - State management
 - **Motion** - Animation library
 
-###  Technical Features
+### 🛠️ Technical Features
 - Type-safe development with TypeScript
 - Component-based architecture
 - React Hooks for state and lifecycle management
@@ -21,7 +21,7 @@ A modern e-commerce store built with TypeScript and React, featuring a clean and
 - Responsive design with Tailwind CSS
 - ESLint configuration for code quality
 
-###  Development
+### 🔧 Development
 ```bash
 # Install dependencies
 npm install
@@ -38,7 +38,7 @@ npm run build
 ## Español
 Una tienda de comercio electrónico moderna construida con TypeScript y React, con un diseño limpio y responsive.
 
-###  Tecnologías
+### 🚀 Tecnologías
 - **React 18** - Biblioteca de UI
 - **TypeScript** - JavaScript con tipos
 - **Vite** - Herramienta de construcción y servidor de desarrollo
@@ -46,7 +46,7 @@ Una tienda de comercio electrónico moderna construida con TypeScript y React, c
 - **Zustand** - Gestión de estado
 - **Motion** - Biblioteca de animaciones
 
-###  Características Técnicas
+### 🛠️ Características Técnicas
 - Desarrollo seguro con TypeScript
 - Arquitectura basada en componentes
 - Hooks de React para gestión de estado y ciclo de vida
@@ -55,7 +55,7 @@ Una tienda de comercio electrónico moderna construida con TypeScript y React, c
 - Diseño responsive con Tailwind CSS
 - Configuración de ESLint para calidad de código
 
-###  Desarrollo
+### 🔧 Desarrollo
 ```bash
 # Instalar dependencias
 npm install
