@@ -13,14 +13,24 @@ export interface Item {
       creationAt: string;
       updatedAt: string;
     };
-    quantity?: number;
   };
 
+  // interface CartItem extends Item {
+  //   quantity: number
+  // }
+
+  type CartItem = Omit<Item, 'category' | 'creationAt' | 'updatedAt'> & {
+    quantity: number
+  }
+
+  type ItemId = Item['id']
+
   export interface CartStore {
-    cart: (Item & { quantity: number })[];
+    // cart: (Item & { quantity: number })[];
+    cart: CartItem[]
     addToCart: (item: Item) => void;
-    removeFromCart: (id: number) => void;
-    increaseQuantity: (id: number) => void;
-    decreaseQuantity: (id: number) => void;
+    removeFromCart: (id: ItemId) => void;
+    increaseQuantity: (id: ItemId) => void;
+    decreaseQuantity: (id: ItemId) => void;
     clearCart: () => void;
   }

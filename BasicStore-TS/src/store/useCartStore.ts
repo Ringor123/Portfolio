@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Item, CartStore } from "../types/types";
+import { CartStore } from "../types/types";
 
 const MAX_ITEMS = 5;
 const MIN_ITEMS = 1;
@@ -9,7 +9,7 @@ export const useCartStore = create<CartStore>()(
   persist(
     (set, get) => ({
       cart: [],
-      addToCart: (item: Item) => {
+      addToCart: (item) => {
         const cart = [...get().cart];
         const itemExists = cart.findIndex((product) => product.id === item.id);
 
@@ -23,11 +23,11 @@ export const useCartStore = create<CartStore>()(
         }
       },
 
-      removeFromCart: (id: number) => {
+      removeFromCart: (id) => {
         set({ cart: get().cart.filter((item) => item.id !== id) });
       },
 
-      increaseQuantity: (id: number) => {
+      increaseQuantity: (id) => {
         const updatedCart = get().cart.map((item) => {
           if (item.id === id && item.quantity < MAX_ITEMS) {
             return {
@@ -40,7 +40,7 @@ export const useCartStore = create<CartStore>()(
         set({ cart: updatedCart });
       },
 
-      decreaseQuantity: (id: number) => {
+      decreaseQuantity: (id) => {
         const updatedCart = get().cart.map((item) => {
           if (item.id === id && item.quantity > MIN_ITEMS) {
             return {
