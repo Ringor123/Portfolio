@@ -9,10 +9,10 @@ const CartPreview = () => {
   );
   return (
     <div className="absolute top-[calc(100%+4px)] right-0 w-90 p-4 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
-      <h3 className="text-lg font-semibold text-gray-800 mb-2">Carrito</h3>
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">Cart</h3>
       <div className="text-gray-600">
         {isCartEmpty ? (
-          <p className="text-center text-gray-500">Tu carrito está vacío</p>
+          <p className="text-center text-gray-500">Your cart is empty</p>
         ) : (
           <>
             <table className="w-full text-sm">
