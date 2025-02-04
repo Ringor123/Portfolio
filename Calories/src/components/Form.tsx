@@ -1,16 +1,24 @@
+// Import required dependencies and types
 import { categories } from "../data/categories";
 import { Activity } from "../types/types";
 import { Dispatch, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ActivityActions, ActivityState } from "../reducers/activity-reducer";
 
-// Define the props type for the Form component
+/**
+ * Props interface for the Form component
+ * @property dispatch - Dispatch function for activity state updates
+ * @property state - Current activity state containing activities and activeId
+ */
 type FormProps = {
     dispatch: Dispatch<ActivityActions>,
     state: ActivityState
 }
 
-// Define the initial state for a new activity
+/**
+ * Initial state for a new activity
+ * Creates a new activity with default values and a unique ID
+ */
 const initialState : Activity = {
     id: uuidv4(),
     category: 1,
@@ -18,11 +26,19 @@ const initialState : Activity = {
     calories: 0
 }
 
+/**
+ * Form Component
+ * Handles the creation and editing of activities (food or exercise)
+ * Provides form validation and state management for activity inputs
+ */
 export default function Form({ dispatch, state }: FormProps) {
-    // Initialize the activity state with the initial state
+    // Initialize local state for the activity being created/edited
     const [activity, setActivity] = useState<Activity>(initialState)
 
-    // Update the activity state when the active ID changes
+    /**
+     * Effect hook to handle editing existing activities
+     * Updates form state when an activity is selected for editing
+     */
     useEffect(() => {
         if(state.activeId) {
             const activeActivity = state.activities.find(stateActivity => stateActivity.id === state.activeId)
@@ -32,11 +48,15 @@ export default function Form({ dispatch, state }: FormProps) {
         }
     }, [state.activeId])
 
-    // Handle form input changes for both select and input elements
+    /**
+     * Handles changes in form inputs
+     * Automatically converts numeric fields to numbers
+     * @param event - Change event from input or select elements
+     */
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value
         
-        // Check if the field should be converted to a number (category and calories)
+        // Convert category and calories fields to numbers
         const isNumberField = ['category', 'calories'].includes(event.target.id)
 
         setActivity({
@@ -45,17 +65,25 @@ export default function Form({ dispatch, state }: FormProps) {
         })
     }
 
-    // Validate that the activity has a name and positive calories
+    /**
+     * Validates the activity form
+     * Ensures activity has a name and positive calories value
+     * @returns boolean indicating if the activity is valid
+     */
     const isValidActivity = () => {
         const { activityName, calories } = activity
         return activityName.trim() !== '' && calories > 0
     }
 
-    // Handle form submission
+    /**
+     * Handles form submission
+     * Saves or updates the activity and resets the form
+     * @param event - Form submission event
+     */
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         dispatch({type: "save-activity", payload: {newActivity: activity}})
-        // Reset form to initial state with a new id after submission
+        // Reset form with new ID for next activity
         setActivity({
             ...initialState,
             id: uuidv4()
@@ -63,7 +91,7 @@ export default function Form({ dispatch, state }: FormProps) {
     }
 
     return (
-        // Render the form with the activity details
+        // Form layout with responsive grid and styling
         <form 
         className="space-y-5 bg-gray-50 shadow p-10 rounded-lg"
         onSubmit={handleSubmit}>

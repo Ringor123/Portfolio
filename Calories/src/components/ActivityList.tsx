@@ -1,41 +1,67 @@
+// Import required dependencies and types
 import { Activity } from "../types/types";
 import { categories } from "../data/categories";
 import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { Dispatch } from "react";
 import { ActivityActions } from "../reducers/activity-reducer";
 
+// Define props interface for ActivityList component
 type ActivityListProps = {
   activities: Activity[];
   dispatch: Dispatch<ActivityActions>;
-  scrollToForm: () => void
+  scrollToForm: () => void;
 };
 
+/**
+ * ActivityList Component
+ * Displays a list of food and exercise activities
+ * Provides functionality to edit and delete activities
+ */
 export default function ActivityList({
   activities,
   dispatch,
-  scrollToForm
+  scrollToForm,
 }: ActivityListProps) {
+  /**
+   * Get category name from category ID
+   * @param category - The category ID
+   * @returns The corresponding category name
+   */
   const categoryName = (category: Activity["category"]) => {
     return categories.map((cat) => (cat.id === category ? cat.name : ""));
   };
 
+  /**
+   * Handle edit button click
+   * Sets the active ID and scrolls to the form
+   */
   const handleEditClick = (id: Activity["id"]) => {
     dispatch({ type: "set-activeId", payload: { id: id } });
-    scrollToForm()
+    scrollToForm();
   };
 
+  /**
+   * Handle delete button click
+   * Removes the activity from the list
+   */
   const handleDeleteClick = (id: Activity["id"]) => {
     dispatch({ type: "delete-activity", payload: { id: id } });
   };
 
   return (
     <>
+      {/* Section title */}
       <h2 className="text-4xl font-bold text-white text-center">
         Food and Exercises
       </h2>
+
+      {/* Conditional rendering based on activities existence */}
       {activities.length === 0 ? (
-        <p className="text-center mt-5 font-semibold">No activities yet... Please add new activity</p>
+        <p className="text-center mt-5 font-semibold">
+          No activities yet... Please add new activity
+        </p>
       ) : (
+        // Map through activities and render each activity card
         activities.map((activity) => (
           <div
             key={activity.id}
