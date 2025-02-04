@@ -1,10 +1,11 @@
 import Form from "./components/Form";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { activityReducer, initialState } from "./reducers/activity-reducer";
 import ActivityList from "./components/ActivityList";
 import CaloriesTracker from "./components/CaloriesTracker";
 
 function App() {
+  const formRef = useRef<HTMLDivElement>(null)
 
   const [state, dispatch] = useReducer(activityReducer, initialState)
 
@@ -14,6 +15,10 @@ function App() {
 
   const canRestartApp = () => {
     return state.activities.length > 0
+  }
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth'})
   }
 
   return (
@@ -35,7 +40,7 @@ function App() {
       </header>
 
       <section className="bg-[#3B6790] py-20 px-5">
-        <div className="max-w-4xl mx-auto">
+        <div ref={formRef} className="max-w-4xl mx-auto">
           <Form dispatch={dispatch} state={state} />
         </div>
       </section>
@@ -47,7 +52,7 @@ function App() {
       </section>
 
       <section className="p-10 mx-auto max-w-4xl">
-        <ActivityList activities={state.activities} dispatch={dispatch} />
+        <ActivityList activities={state.activities} dispatch={dispatch} scrollToForm={scrollToForm}/>
       </section>
     </>
   );

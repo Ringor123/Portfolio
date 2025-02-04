@@ -7,11 +7,13 @@ import { ActivityActions } from "../reducers/activity-reducer";
 type ActivityListProps = {
   activities: Activity[];
   dispatch: Dispatch<ActivityActions>;
+  scrollToForm: () => void
 };
 
 export default function ActivityList({
   activities,
   dispatch,
+  scrollToForm
 }: ActivityListProps) {
   const categoryName = (category: Activity["category"]) => {
     return categories.map((cat) => (cat.id === category ? cat.name : ""));
@@ -19,6 +21,7 @@ export default function ActivityList({
 
   const handleEditClick = (id: Activity["id"]) => {
     dispatch({ type: "set-activeId", payload: { id: id } });
+    scrollToForm()
   };
 
   const handleDeleteClick = (id: Activity["id"]) => {
