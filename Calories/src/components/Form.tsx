@@ -119,8 +119,10 @@ export default function Form({ dispatch, state }: FormProps) {
             {/* Submit Button */}
             <input
                 type="submit"
-                className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold uppercase text-white cursor-pointer disabled:opacity-10 disabled:cursor-not-allowed"
-                value={`Save ${activity.category === 1 ? 'Food' : 'Exercise'}`} 
+                className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold uppercase 
+                text-white cursor-pointer disabled:opacity-10 disabled:cursor-not-allowed"
+                value={state.activeId ? `Update ${activity.category === 1 ? 'Food' : 'Exercise'}` 
+                : `Save ${activity.category === 1 ? 'Food' : 'Exercise'}`} 
                 disabled={!isValidActivity()}
             ></input>
         </form>
