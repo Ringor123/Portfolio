@@ -34,7 +34,7 @@ The `src/components` directory contains modular React components, while `src/red
 
 ## Development Stack
 
-- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [Vite](https://vitejs.dev/) with [React](https://react.dev/) - Next Generation Frontend Tooling
 - [ESLint](https://eslint.org/) with TypeScript configuration
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 
@@ -76,6 +76,6 @@ El directorio `src/components` contiene componentes React modulares, mientras qu
 
 ## Stack de Desarrollo
 
-- [Vite](https://vitejs.dev/) - Herramientas de Frontend de Nueva Generación
+- [Vite](https://vitejs.dev/) con [React](https://react.dev/) - Herramientas de Frontend de Nueva Generación
 - [ESLint](https://eslint.org/) con configuración TypeScript
 - [Tailwind CSS](https://tailwindcss.com/) para estilos
