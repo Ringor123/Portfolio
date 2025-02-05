@@ -97,3 +97,4 @@ BasicStore-Zustand/
 - [Vite](https://vitejs.dev/) v6.0.5
 - [ESLint](https://eslint.org/) v9.17.0 con plugins de React
 - SWC para compilación rápida
+
