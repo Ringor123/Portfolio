@@ -42,7 +42,7 @@ The `src/components` directory contains modular React components, while `src/red
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/Ringor123/Portfolio.git
 cd calories
 ```
 
@@ -109,7 +109,7 @@ El directorio `src/components` contiene componentes React modulares, mientras qu
 
 1. Clonar el repositorio:
 ```bash
-git clone [repository-url]
+git clone https://github.com/Ringor123/Portfolio.git
 cd calories
 ```
 
