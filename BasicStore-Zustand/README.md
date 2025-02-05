@@ -11,10 +11,10 @@ A modern React e-commerce prototype showcasing state management with Zustand and
 - Motion effects with [Motion One](https://motion.dev/) for smooth animations
 
 ### Technical Highlights
-- Implements [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for lazy loading and scroll animations
-- Modern [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) architecture
+- Persistent shopping cart with local storage using Zustand persist middleware
 - Component-based architecture with React
-- Efficient state management patterns using Zustand stores
+- State management with Zustand store
+- Responsive design with Tailwind CSS
 
 ## Project Structure
 
@@ -56,7 +56,7 @@ BasicStore-Zustand/
 ### Setup and Running
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/BasicStore-Zustand.git
+git clone https://github.com/Ringor123/Portfolio.git
 cd BasicStore-Zustand
 ```
 
@@ -92,10 +92,10 @@ Un prototipo moderno de comercio electrónico en React que demuestra la gestión
 - Efectos de movimiento con [Motion One](https://motion.dev/) para animaciones fluidas
 
 ### Aspectos Técnicos Destacados
-- Implementa [Intersection Observer API](https://developer.mozilla.org/es/docs/Web/API/Intersection_Observer_API) para carga diferida y animaciones de desplazamiento
-- Arquitectura moderna de [Módulos ES](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Modules)
+- Carrito de compras persistente con almacenamiento local usando el middleware persist de Zustand
 - Arquitectura basada en componentes con React
-- Patrones eficientes de gestión de estado usando Zustand
+- Gestión de estado con Zustand store
+- Diseño responsive con Tailwind CSS
 
 ## Estructura del Proyecto
 
@@ -137,7 +137,7 @@ BasicStore-Zustand/
 ### Configuración y Ejecución
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/yourusername/BasicStore-Zustand.git
+git clone https://github.com/Ringor123/Portfolio.git
 cd BasicStore-Zustand
 ```
 
