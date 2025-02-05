@@ -1,72 +1,97 @@
-# BasicStore with useCart Hook 🛍️
+# BasicStore with useCart Hook
 
-## English 
+A modern e-commerce store built with React and Vite, featuring a custom shopping cart implementation using React hooks. This project demonstrates advanced state management patterns and modern web development practices.
 
-### Description
-A basic e-commerce store built with React, featuring a custom shopping cart hook. This project demonstrates the implementation of a shopping cart functionality using React's useState hook and custom state management through a custom hook.
+## Technical Highlights
 
-### Technologies Used
-- React 18.3.1
-- Vite 6.0.5
-- TailwindCSS 4.0.0
-- Motion 12.0.6 (for animations)
+- Custom [`useCart`](./src/hooks/useCart.js) hook implementing shopping cart functionality
+- Built with [React 18](https://react.dev/) utilizing modern hooks patterns
+- [Tailwind CSS](https://tailwindcss.com/) v4.0 for styling
+- [Motion](https://motion.dev/) v12 for smooth animations
+- [Vite](https://vitejs.dev/) v6 for blazing-fast development experience
 
-### Key Features
-- Custom `useCart` hook for shopping cart management
-- Local storage persistence for cart items
-- Responsive design with TailwindCSS
-- Modern UI components
-- State management using React's useState and custom hooks
-- Product quantity limits and validation
-- ESLint configuration for code quality
+## Installation and Usage
 
-### Project Structure
-```
-src/
-  ├── components/     # React components (Header, Card, CartPreview)
-  ├── hooks/         # Custom hooks (useCart)
-  ├── assets/        # Static assets
-  └── db.js          # Product database
-```
-
-### Development
 ```bash
+# Clone the repository
+git clone https://github.com/Ringor123/Portfolio.git
+
+# Navigate to project directory
+cd BasicStore-useCart
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+## Project Structure
+
+```
+├── src/
+│   ├── assets/         # Static assets and images
+│   ├── components/     # React components
+│   ├── hooks/         # Custom React hooks
+│   └── db.js          # Mock database and product data
+├── public/            # Public static files
+└── dist/             # Production build output
+```
+
+The `src/hooks` directory contains our custom cart management logic, demonstrating advanced state management patterns in React.
 
 ---
 
-## Español 🇪🇸
+# BasicStore con useCart Hook
 
-### Descripción
-Una tienda básica de comercio electrónico construida con React, que presenta un hook personalizado para el carrito de compras. Este proyecto demuestra la implementación de la funcionalidad de un carrito de compras utilizando el hook useState de React y gestión de estado personalizada a través de un hook propio.
+Una tienda de comercio electrónico moderna construida con React y Vite, que presenta una implementación personalizada del carrito de compras utilizando hooks de React. Este proyecto demuestra patrones avanzados de gestión de estado y prácticas modernas de desarrollo web.
 
-### Tecnologías Utilizadas
-- React 18.3.1
-- Vite 6.0.5
-- TailwindCSS 4.0.0
-- Motion 12.0.6 (para animaciones)
+## Aspectos Técnicos Destacados
 
-### Características Principales
-- Hook personalizado `useCart` para la gestión del carrito de compras
-- Persistencia en almacenamiento local para los items del carrito
-- Diseño responsive con TailwindCSS
-- Componentes UI modernos
-- Gestión del estado usando useState de React y hooks personalizados
-- Límites y validación de cantidad de productos
-- Configuración de ESLint para la calidad del código
+- Hook personalizado [`useCart`](./src/hooks/useCart.js) que implementa la funcionalidad del carrito de compras
+- Construido con [React 18](https://react.dev/) utilizando patrones modernos de hooks
+- [Tailwind CSS](https://tailwindcss.com/) v4.0 para el estilizado
+- [Motion](https://motion.dev/) v12 para animaciones fluidas
+- [Vite](https://vitejs.dev/) v6 para una experiencia de desarrollo ultrarrápida
 
-### Estructura del Proyecto
-```
-src/
-  ├── components/     # Componentes de React (Header, Card, CartPreview)
-  ├── hooks/         # Hooks personalizados (useCart)
-  ├── assets/        # Recursos estáticos
-  └── db.js          # Base de datos de productos
-```
+## Instalación y Uso
 
-### Desarrollo
 ```bash
+# Clonar el repositorio
+git clone https://github.com/Ringor123/Portfolio.git
+
+# Navegar al directorio del proyecto
+cd BasicStore-useCart
+
+# Instalar dependencias
 npm install
+
+# Iniciar servidor de desarrollo
 npm run dev
+
+# Construir para producción
+npm run build
+
+# Previsualizar build de producción
+npm run preview
+```
+
+## Estructura del Proyecto
+
+```
+├── src/
+│   ├── assets/         # Activos estáticos e imágenes
+│   ├── components/     # Componentes de React
+│   ├── hooks/         # Hooks personalizados de React
+│   └── db.js          # Base de datos simulada y datos de productos
+├── public/            # Archivos estáticos públicos
+└── dist/             # Salida de compilación de producción
+```
+
+El directorio `src/hooks` contiene nuestra lógica personalizada de gestión del carrito, demostrando patrones avanzados de gestión de estado en React.
