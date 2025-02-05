@@ -38,6 +38,31 @@ The `src/components` directory contains modular React components, while `src/red
 - [ESLint](https://eslint.org/) with TypeScript configuration
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 
+## Installation and Usage
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd calories
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+The development server will start at `http://localhost:5173` by default.
+
 ---
 
 # Aplicación Contador de Calorías
@@ -79,3 +104,28 @@ El directorio `src/components` contiene componentes React modulares, mientras qu
 - [Vite](https://vitejs.dev/) con [React](https://react.dev/) - Herramientas de Frontend de Nueva Generación
 - [ESLint](https://eslint.org/) con configuración TypeScript
 - [Tailwind CSS](https://tailwindcss.com/) para estilos
+
+## Instalación y Uso
+
+1. Clonar el repositorio:
+```bash
+git clone [repository-url]
+cd calories
+```
+
+2. Instalar dependencias:
+```bash
+npm install
+```
+
+3. Ejecutar el servidor de desarrollo:
+```bash
+npm run dev
+```
+
+4. Construir para producción:
+```bash
+npm run build
+```
+
+El servidor de desarrollo se iniciará en `http://localhost:5173` por defecto.
