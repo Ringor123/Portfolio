@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
+# Calories Counter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive calorie tracking application built with React and TypeScript. This application helps users track their daily caloric intake through an intuitive and efficient interface.
 
-Currently, two official plugins are available:
+## Technical Highlights
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Built with [React 18](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/), leveraging modern features like the [`useReducer`](https://react.dev/reference/react/useReducer) hook for state management
+- Implements [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for smooth scrolling behaviors
+- Uses [Tailwind CSS](https://tailwindcss.com/) for responsive and utility-first styling
+- Persistent storage using [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
 
-## Expanding the ESLint configuration
+## Notable Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [HeroIcons](https://heroicons.com/) - Beautiful hand-crafted SVG icons
+- [@number-flow/react](https://www.npmjs.com/package/@number-flow/react) - Efficient number input handling
+- [SWC](https://swc.rs/) - Used via Vite for super-fast compilation
+- [UUID](https://www.npmjs.com/package/uuid) - Unique identifier generation
 
-- Configure the top-level `parserOptions` property like this:
+## Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+.
+├── public/             # Static assets
+├── src/
+│   ├── components/     # React components
+│   ├── reducers/       # State management
+│   ├── data/          # Application data and constants
+│   └── types/         # TypeScript type definitions
+├── .vscode/           # Editor configuration
+└── ...config files    # Various configuration files
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The `src/components` directory contains modular React components, while `src/reducers` implements the state management logic using the reducer pattern. The `src/data` directory houses static data and configuration constants.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Development Stack
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [ESLint](https://eslint.org/) with TypeScript configuration
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+---
+
+# Aplicación Contador de Calorías
+
+Una aplicación moderna y responsiva para el seguimiento de calorías construida con React y TypeScript. Esta aplicación ayuda a los usuarios a realizar un seguimiento de su ingesta calórica diaria a través de una interfaz intuitiva y eficiente.
+
+## Aspectos Técnicos Destacados
+
+- Construida con [React 18](https://react.dev/) y [TypeScript](https://www.typescriptlang.org/), aprovechando características modernas como el hook [`useReducer`](https://react.dev/reference/react/useReducer) para la gestión del estado
+- Implementa [Intersection Observer API](https://developer.mozilla.org/es/docs/Web/API/Intersection_Observer_API) para comportamientos de desplazamiento suave
+- Utiliza [Tailwind CSS](https://tailwindcss.com/) para estilos responsivos basados en utilidades
+- Almacenamiento persistente usando [Web Storage API](https://developer.mozilla.org/es/docs/Web/API/Web_Storage_API)
+
+## Tecnologías Notables
+
+- [HeroIcons](https://heroicons.com/) - Iconos SVG hermosos hechos a mano
+- [@number-flow/react](https://www.npmjs.com/package/@number-flow/react) - Manejo eficiente de entradas numéricas
+- [SWC](https://swc.rs/) - Usado a través de Vite para compilación ultra rápida
+- [UUID](https://www.npmjs.com/package/uuid) - Generación de identificadores únicos
+
+## Estructura del Proyecto
+
 ```
+.
+├── public/             # Recursos estáticos
+├── src/
+│   ├── components/     # Componentes React
+│   ├── reducers/       # Gestión de estado
+│   ├── data/          # Datos y constantes de la aplicación
+│   └── types/         # Definiciones de tipos TypeScript
+├── .vscode/           # Configuración del editor
+└── ...archivos config # Varios archivos de configuración
+```
+
+El directorio `src/components` contiene componentes React modulares, mientras que `src/reducers` implementa la lógica de gestión de estado usando el patrón reducer. El directorio `src/data` aloja datos estáticos y constantes de configuración.
+
+## Stack de Desarrollo
+
+- [Vite](https://vitejs.dev/) - Herramientas de Frontend de Nueva Generación
+- [ESLint](https://eslint.org/) con configuración TypeScript
+- [Tailwind CSS](https://tailwindcss.com/) para estilos
