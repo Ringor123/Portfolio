@@ -5,7 +5,6 @@ A modern, responsive calorie tracking application built with React and TypeScrip
 ## Technical Highlights
 
 - Built with [React 18](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/), leveraging modern features like the [`useReducer`](https://react.dev/reference/react/useReducer) hook for state management
-- Implements [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for smooth scrolling behaviors
 - Uses [Tailwind CSS](https://tailwindcss.com/) for responsive and utility-first styling
 - Persistent storage using [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
 
@@ -72,7 +71,6 @@ Una aplicación moderna y responsiva para el seguimiento de calorías construida
 ## Aspectos Técnicos Destacados
 
 - Construida con [React 18](https://react.dev/) y [TypeScript](https://www.typescriptlang.org/), aprovechando características modernas como el hook [`useReducer`](https://react.dev/reference/react/useReducer) para la gestión del estado
-- Implementa [Intersection Observer API](https://developer.mozilla.org/es/docs/Web/API/Intersection_Observer_API) para comportamientos de desplazamiento suave
 - Utiliza [Tailwind CSS](https://tailwindcss.com/) para estilos responsivos basados en utilidades
 - Almacenamiento persistente usando [Web Storage API](https://developer.mozilla.org/es/docs/Web/API/Web_Storage_API)
 
