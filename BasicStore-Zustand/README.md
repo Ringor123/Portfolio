@@ -47,6 +47,36 @@ BasicStore-Zustand/
 - [ESLint](https://eslint.org/) v9.17.0 with React plugins
 - SWC for fast compilation
 
+## Installation and Usage
+
+### Prerequisites
+- Node.js 18.x or higher
+- npm 9.x or higher
+
+### Setup and Running
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/BasicStore-Zustand.git
+cd BasicStore-Zustand
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start development server:
+```bash
+npm run dev
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+The development server will start at `http://localhost:5173` by default.
+
 ---
 
 # BasicStore-Zustand (Español)
@@ -98,3 +128,32 @@ BasicStore-Zustand/
 - [ESLint](https://eslint.org/) v9.17.0 con plugins de React
 - SWC para compilación rápida
 
+## Instalación y Uso
+
+### Prerrequisitos
+- Node.js 18.x o superior
+- npm 9.x o superior
+
+### Configuración y Ejecución
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/yourusername/BasicStore-Zustand.git
+cd BasicStore-Zustand
+```
+
+2. Instalar dependencias:
+```bash
+npm install
+```
+
+3. Iniciar servidor de desarrollo:
+```bash
+npm run dev
+```
+
+4. Construir para producción:
+```bash
+npm run build
+```
+
+El servidor de desarrollo se iniciará en `http://localhost:5173` por defecto.
