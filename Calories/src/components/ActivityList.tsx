@@ -58,7 +58,7 @@ export default function ActivityList({
       {/* Conditional rendering based on activities existence */}
       {activities.length === 0 ? (
         <p className="text-center mt-5 font-semibold">
-          No activities yet... Please add new activity
+          No activities yet...
         </p>
       ) : (
         // Map through activities and render each activity card

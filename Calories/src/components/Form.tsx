@@ -137,10 +137,10 @@ export default function Form({ dispatch, state }: FormProps) {
                 <input
                     type="number"
                     id="calories"
-                    value={activity.calories}
+                    value={activity.calories || ''}
                     onChange={handleChange}
                     className="border border-slate-300 p-2 rounded-lg bg-white"
-                    placeholder="Calories. e.g. 300 or 500"
+                    placeholder="e.g. 300 or 500"
                 />
             </div>
 
