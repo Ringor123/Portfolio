@@ -1,3 +1,8 @@
+/**
+ * Form component for adding and editing expenses
+ * Handles both new expense creation and updating existing expenses
+ * Includes validation for budget limits and required fields
+ */
 import { useEffect, useState } from "react";
 import { categories } from "../data/categories";
 import { DraftExpense } from "../types";
@@ -5,6 +10,7 @@ import ErrorMessage from "./ErrorMessage";
 import { useBudget } from "../hooks/useBudget";
 
 export default function ExpenseForm() {
+  // Initialize form state with empty values
   const [expense, setExpense] = useState<DraftExpense>({
     expenseName: "",
     amount: 0,
@@ -12,60 +18,96 @@ export default function ExpenseForm() {
     date: new Date(),
   });
 
-  const [error, setError] = useState('')
+  // State for error handling and tracking previous amount for budget calculations
+  const [error, setError] = useState("");
+  const [previousAmount, setPreviousAmount] = useState(0);
 
+  const { state, dispatch, availableBudget } = useBudget();
+
+  // Load existing expense data when in edit mode
+  useEffect(() => {
+    if (state.editingId) {
+      const editingExpense = state.expenses.filter(
+        (e) => e.id === state.editingId
+      )[0];
+      if (editingExpense) {
+        setExpense({
+          ...editingExpense,
+          date: new Date(editingExpense.date),
+        });
+        // Store previous amount for budget validation when updating
+        setPreviousAmount(editingExpense.amount)
+      }
+    }
+  }, [state.editingId, state.expenses, availableBudget]);
+
+  // Auto-clear error messages after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
-      setError('')
-    },5000)
+      setError("");
+    }, 5000);
 
-    return () => clearTimeout(timer)
-  }, [error])
+    return () => clearTimeout(timer);
+  }, [error]);
 
-  const { dispatch } = useBudget()
-
+  // Handle form input changes with type safety
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLSelectElement>
   ) => {
-    const {name, value} = e.target
+    const { name, value } = e.target;
     setExpense({
       ...expense,
-      [name]: name === 'amount' ? Number(value) : value
+      [name]: name === "amount" ? Number(value) : value,
     });
   };
 
+  // Handle date input changes separately
   const handleChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newDate = new Date(e.target.value);
     setExpense({ ...expense, date: newDate });
   };
 
+  // Validate form data and dispatch update or add actions
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if(Object.values(expense).includes('')) {
-      setError('All fields are required')
-      return
+    // Check for required fields
+    if (Object.values(expense).includes("")) {
+      setError("All fields are required");
+      return;
     }
 
-    dispatch({type: 'add-expense', payload: {expense}})
+    // Validate budget limits
+    if ((expense.amount - previousAmount) > availableBudget) {
+      setError("You cannot spend more than the amount available");
+      return;
+    }
 
+    // Dispatch update or add actions based on edit mode
+    if (state.editingId) {
+      dispatch({
+        type: "update-expense",
+        payload: { expense: { id: state.editingId, ...expense } },
+      });
+    } else {
+      dispatch({ type: "add-expense", payload: { expense } });
+    }
+
+    // Reset form state after submission
     setExpense({
       expenseName: "",
       amount: 0,
       category: "",
       date: new Date(),
-    })
-
-    
-    // dispatch({type: 'close-modal'})
-  }
+    });
+  };
 
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
       <legend className="uppercase text-center text-[#31393c] text-2xl font-black border-b-4 py-2">
-        New expense
+        {state.editingId ? "Update" : "New"} expense
       </legend>
 
       {error && <ErrorMessage>{error}</ErrorMessage>}

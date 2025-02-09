@@ -1,3 +1,11 @@
+/**
+ * Modal component for adding/editing expenses
+ * Features:
+ * - Animated transitions using Headless UI
+ * - Floating action button for opening modal
+ * - Backdrop click to close
+ * - Responsive design
+ */
 import { Fragment } from "react";
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import {
@@ -14,12 +22,14 @@ export default function ExpenseModal() {
 
   return (
     <>
+      {/* Floating action button for opening modal */}
       <div className="fixed right-5 bottom-5 flex items-center justify-center">
         <button type="button" onClick={() => dispatch({ type: "show-modal" })}>
           <PlusCircleIcon className="w-16 h-16 text-[#31393c] rounded-full cursor-pointer" />
         </button>
       </div>
 
+      {/* Modal with transition effects */}
       <Transition appear show={state.modal} as={Fragment}>
         <Dialog
           as="div"
