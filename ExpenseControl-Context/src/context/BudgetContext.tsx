@@ -9,6 +9,7 @@ import { BudgetActions, BudgetState } from "../reducers/budget-reducer";
 type BudgetContextProps = {
   spentBudget: number;      // Total amount spent across all expenses
   availableBudget: number;  // Remaining budget after expenses
+  budget: number;           // Total budget
   state: BudgetState;       // Complete application state
   dispatch: Dispatch<BudgetActions>;  // Dispatch function for state updates
 };

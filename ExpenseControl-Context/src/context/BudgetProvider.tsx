@@ -19,13 +19,16 @@ export const BudgetProvider = ({ children }: BudgetProviderProps) => {
   // Calculate remaining budget by subtracting spent amount from total budget
   const availableBudget = state.budget - spentBudget;
 
+  const budget = state.budget
+
   return (
     <BudgetContext.Provider
       value={{
         state,
         dispatch,
         spentBudget,
-        availableBudget
+        availableBudget,
+        budget
       }}
     >
       {children}
