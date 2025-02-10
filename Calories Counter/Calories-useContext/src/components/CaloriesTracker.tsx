@@ -1,12 +1,12 @@
-import { Activity } from "../types/types"
+import { useActivities } from "../hooks/useActivities"
 import CaloriesDisplay from "./CaloriesDisplay"
 
 
-type CaloriesTrackerProps = {
-  activities: Activity[]
-}
+export default function CaloriesTracker() {
 
-export default function CaloriesTracker({ activities }: CaloriesTrackerProps ) {
+  const {state} = useActivities()
+
+  const activities = state.activities
 
   const caloriesConsumed = () => {
     return activities.reduce((total, activity) => activity.category === 1 ? total + activity.calories : total, 0)

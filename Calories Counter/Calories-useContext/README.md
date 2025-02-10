@@ -1,19 +1,23 @@
 # Calories Counter App
 
-A modern, responsive calorie tracking application built with React and TypeScript. This application helps users track their daily caloric intake through an intuitive and efficient interface.
+A modern, TypeScript-based calorie tracking application built with React and Context API. This application demonstrates advanced state management patterns and modern web development practices.
 
 ## Technical Highlights
 
-- Built with [React 18](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/), leveraging modern features like the [`useReducer`](https://react.dev/reference/react/useReducer) hook for state management
-- Uses [Tailwind CSS](https://tailwindcss.com/) for responsive and utility-first styling
-- Persistent storage using [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+- Built with [React 18](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/)
+- State management using [React Context API](https://react.dev/reference/react/useContext)
+- Responsive design implemented with [Tailwind CSS](https://tailwindcss.com/)
+- Persistent storage using [localStorage Web API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- Smooth scrolling functionality using [Element.scrollIntoView()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)
+- Custom hooks for activity management
+- UUID generation for unique activity identification
 
-## Notable Technologies
+## Notable Dependencies
 
-- [HeroIcons](https://heroicons.com/) - Beautiful hand-crafted SVG icons
-- [@number-flow/react](https://www.npmjs.com/package/@number-flow/react) - Efficient number input handling
-- [SWC](https://swc.rs/) - Used via Vite for super-fast compilation
-- [UUID](https://www.npmjs.com/package/uuid) - Unique identifier generation
+- [@heroicons/react](https://github.com/tailwindlabs/heroicons) - Beautiful hand-crafted SVG icons
+- [@number-flow/react](https://github.com/number-flow/react) - Number input handling
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [SWC](https://swc.rs/) - Used via Vite for fast compilation
 
 ## Project Structure
 
@@ -22,14 +26,14 @@ A modern, responsive calorie tracking application built with React and TypeScrip
 ├── public/             # Static assets
 ├── src/
 │   ├── components/     # React components
-│   ├── reducers/       # State management
-│   ├── data/          # Application data and constants
+│   ├── context/       # React Context definitions
+│   ├── hooks/         # Custom React hooks
 │   └── types/         # TypeScript type definitions
-├── .vscode/           # Editor configuration
+├── .vscode/           # VS Code configuration
 └── ...config files    # Various configuration files
 ```
 
-The `src/components` directory contains modular React components, while `src/reducers` implements the state management logic using the reducer pattern. The `src/data` directory houses static data and configuration constants.
+The `src/components` directory contains the core application components, while `src/context` manages the global state. Custom hooks in `src/hooks` provide reusable logic for activity management.
 
 ## Development Stack
 
@@ -64,22 +68,26 @@ The development server will start at `http://localhost:5173` by default.
 
 ---
 
-# Aplicación Contador de Calorías
+# Contador de Calorías
 
-Una aplicación moderna y responsiva para el seguimiento de calorías construida con React y TypeScript. Esta aplicación ayuda a los usuarios a realizar un seguimiento de su ingesta calórica diaria a través de una interfaz intuitiva y eficiente.
+Una aplicación moderna de seguimiento de calorías desarrollada con React y Context API, utilizando TypeScript. Esta aplicación demuestra patrones avanzados de gestión de estado y prácticas modernas de desarrollo web.
 
 ## Aspectos Técnicos Destacados
 
-- Construida con [React 18](https://react.dev/) y [TypeScript](https://www.typescriptlang.org/), aprovechando características modernas como el hook [`useReducer`](https://react.dev/reference/react/useReducer) para la gestión del estado
-- Utiliza [Tailwind CSS](https://tailwindcss.com/) para estilos responsivos basados en utilidades
-- Almacenamiento persistente usando [Web Storage API](https://developer.mozilla.org/es/docs/Web/API/Web_Storage_API)
+- Construido con [React 18](https://react.dev/) y [TypeScript](https://www.typescriptlang.org/)
+- Gestión de estado usando [React Context API](https://react.dev/reference/react/useContext)
+- Diseño responsivo implementado con [Tailwind CSS](https://tailwindcss.com/)
+- Almacenamiento persistente usando [localStorage Web API](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
+- Funcionalidad de desplazamiento suave usando [Element.scrollIntoView()](https://developer.mozilla.org/es/docs/Web/API/Element/scrollIntoView)
+- Hooks personalizados para la gestión de actividades
+- Generación de UUID para identificación única de actividades
 
-## Tecnologías Notables
+## Dependencias Notables
 
-- [HeroIcons](https://heroicons.com/) - Iconos SVG hermosos hechos a mano
-- [@number-flow/react](https://www.npmjs.com/package/@number-flow/react) - Manejo eficiente de entradas numéricas
-- [SWC](https://swc.rs/) - Usado a través de Vite para compilación ultra rápida
-- [UUID](https://www.npmjs.com/package/uuid) - Generación de identificadores únicos
+- [@heroicons/react](https://github.com/tailwindlabs/heroicons) - Iconos SVG hermosos hechos a mano
+- [@number-flow/react](https://github.com/number-flow/react) - Manejo de entrada de números
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS basado en utilidades
+- [SWC](https://swc.rs/) - Usado a través de Vite para compilación rápida
 
 ## Estructura del Proyecto
 
@@ -88,14 +96,14 @@ Una aplicación moderna y responsiva para el seguimiento de calorías construida
 ├── public/             # Recursos estáticos
 ├── src/
 │   ├── components/     # Componentes React
-│   ├── reducers/       # Gestión de estado
-│   ├── data/          # Datos y constantes de la aplicación
+│   ├── context/       # Definiciones de Context
+│   ├── hooks/         # Hooks personalizados
 │   └── types/         # Definiciones de tipos TypeScript
-├── .vscode/           # Configuración del editor
+├── .vscode/           # Configuración de VS Code
 └── ...archivos config # Varios archivos de configuración
 ```
 
-El directorio `src/components` contiene componentes React modulares, mientras que `src/reducers` implementa la lógica de gestión de estado usando el patrón reducer. El directorio `src/data` aloja datos estáticos y constantes de configuración.
+El directorio `src/components` contiene los componentes principales de la aplicación, mientras que `src/context` gestiona el estado global. Los hooks personalizados en `src/hooks` proporcionan lógica reutilizable para la gestión de actividades.
 
 ## Stack de Desarrollo
 

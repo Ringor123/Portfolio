@@ -2,13 +2,10 @@
 import { Activity } from "../types/types";
 import { categories } from "../data/categories";
 import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
-import { Dispatch } from "react";
-import { ActivityActions } from "../reducers/activity-reducer";
+import { useActivities } from "../hooks/useActivities";
 
 // Define props interface for ActivityList component
 type ActivityListProps = {
-  activities: Activity[];
-  dispatch: Dispatch<ActivityActions>;
   scrollToForm: () => void;
 };
 
@@ -17,11 +14,7 @@ type ActivityListProps = {
  * Displays a list of food and exercise activities
  * Provides functionality to edit and delete activities
  */
-export default function ActivityList({
-  activities,
-  dispatch,
-  scrollToForm,
-}: ActivityListProps) {
+export default function ActivityList({ scrollToForm }: ActivityListProps) {
   /**
    * Get category name from category ID
    * @param category - The category ID
@@ -30,6 +23,10 @@ export default function ActivityList({
   const categoryName = (category: Activity["category"]) => {
     return categories.map((cat) => (cat.id === category ? cat.name : ""));
   };
+
+  const { state, dispatch } = useActivities();
+
+  const activities = state.activities;
 
   /**
    * Handle edit button click
@@ -57,9 +54,7 @@ export default function ActivityList({
 
       {/* Conditional rendering based on activities existence */}
       {activities.length === 0 ? (
-        <p className="text-center mt-5 font-semibold">
-          No activities yet...
-        </p>
+        <p className="text-center mt-5 font-semibold">No activities yet...</p>
       ) : (
         // Map through activities and render each activity card
         activities.map((activity) => (

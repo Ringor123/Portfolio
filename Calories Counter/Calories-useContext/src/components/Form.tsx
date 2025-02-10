@@ -1,19 +1,9 @@
 // Import required dependencies and types
 import { categories } from "../data/categories";
 import { Activity } from "../types/types";
-import { Dispatch, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { ActivityActions, ActivityState } from "../reducers/activity-reducer";
-
-/**
- * Props interface for the Form component
- * @property dispatch - Dispatch function for activity state updates
- * @property state - Current activity state containing activities and activeId
- */
-type FormProps = {
-    dispatch: Dispatch<ActivityActions>,
-    state: ActivityState
-}
+import { useActivities } from "../hooks/useActivities";
 
 /**
  * Initial state for a new activity
@@ -31,9 +21,11 @@ const initialState : Activity = {
  * Handles the creation and editing of activities (food or exercise)
  * Provides form validation and state management for activity inputs
  */
-export default function Form({ dispatch, state }: FormProps) {
+export default function Form() {
     // Initialize local state for the activity being created/edited
     const [activity, setActivity] = useState<Activity>(initialState)
+
+    const {state, dispatch} = useActivities()
 
     /**
      * Effect hook to handle editing existing activities
