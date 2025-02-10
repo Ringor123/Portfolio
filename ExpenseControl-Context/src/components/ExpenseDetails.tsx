@@ -56,15 +56,15 @@ export default function ExpenseDetails({expense}: ExpenseDetailsProps) {
       className="overflow-hidden"
       >
     <div 
-    className="bg-[#fdca40] shadow-lg px-4 py-5 w-full border-[#F79824] flex gap-5 items-center cursor-default">
+    className="bg-cards shadow-lg px-4 py-5 w-full border-body flex gap-5 items-center cursor-default">
       <div>
-        <img src={`/icono_${categoryInfo.icon}.svg`} className="w-20 pointer-events-none"/>
+        <img src={`/${categoryInfo.icon}_icon.svg`} className="w-20 pointer-events-none"/>
       </div>
 
       <div className="flex-1 space-y-1">
-        <p className="text-sm font-bold uppercase text-[#31393c]">{categoryInfo.name}</p>
+        <p className="text-sm font-bold uppercase text-header">{categoryInfo.name}</p>
         <p>{expense.expenseName}</p>
-        <p className="text-[#31393c] text-sm">{formatDate(expense.date.toString())}</p>
+        <p className="text-header text-sm">{formatDate(expense.date.toString())}</p>
       </div>
       <AmountDisplay amount={expense.amount} />
     </div>

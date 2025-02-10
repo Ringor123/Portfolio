@@ -18,7 +18,7 @@ export default function FilterByCategory() {
   }
 
   return (
-    <div className="bg-[#FDCA40] shadow-lg rounded-lg p-2.5">
+    <div className="bg-cards shadow-lg rounded-lg p-2.5">
       <form>
         <div className="flex flex-col md:flex-row md:items-center gap-5">
           <label htmlFor="category">Filter expenses: </label>

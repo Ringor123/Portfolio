@@ -26,7 +26,7 @@ export default function BudgetPlanner() {
           {/* Reset application state button */}
           <button
             type="button"
-            className="transition bg-[#31393C] hover:bg-[#D62828] w-full p-2 
+            className="transition bg-header hover:bg-[#D62828] w-full p-2 
           text-white uppercase font-bold rounded-lg cursor-pointer"
           onClick={() => dispatch({type: 'reset-app'})}
           >

@@ -47,7 +47,7 @@ export default function BudgetForm() {
 
       <input
         type="submit"
-        className="bg-[#31393C] cursor-pointer
+        className="bg-header cursor-pointer
         w-full p-2 font-bold text-white uppercase disabled:opacity-40 disabled:cursor-not-allowed"
         value='Define Budget'
         disabled={!isValid}

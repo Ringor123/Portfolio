@@ -31,3 +31,9 @@
     display: none;
   }
 }
+
+@theme {
+  --color-header: #31393C;
+  --color-body: #F79824;
+  --color-cards: #FDCA40;
+}

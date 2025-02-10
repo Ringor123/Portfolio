@@ -25,7 +25,7 @@ export default function ExpenseModal() {
       {/* Floating action button for opening modal */}
       <div className="fixed right-5 bottom-5 flex items-center justify-center">
         <button type="button" onClick={() => dispatch({ type: "show-modal" })}>
-          <PlusCircleIcon className="w-16 h-16 text-[#31393c] rounded-full cursor-pointer" />
+          <PlusCircleIcon className="w-16 h-16 text-header rounded-full cursor-pointer" />
         </button>
       </div>
 
@@ -62,7 +62,7 @@ export default function ExpenseModal() {
                 leaveTo="opacity-0 scale-95"
               >
                 <DialogPanel className="w-full max-w-3xl transform overflow-hidden rounded-2xl 
-                bg-[#fdca40] p-6 text-left align-middle shadow-xl transition-all">
+                bg-cards p-6 text-left align-middle shadow-xl transition-all">
                   <ExpenseForm />
                 </DialogPanel>
               </TransitionChild>

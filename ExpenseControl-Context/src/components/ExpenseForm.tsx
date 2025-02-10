@@ -106,7 +106,7 @@ export default function ExpenseForm() {
 
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
-      <legend className="uppercase text-center text-[#31393c] text-2xl font-black border-b-4 py-2">
+      <legend className="uppercase text-center text-header text-2xl font-black border-b-4 py-2">
         {state.editingId ? "Update" : "New"} expense
       </legend>
 
@@ -177,7 +177,7 @@ export default function ExpenseForm() {
 
       <input
         type="submit"
-        className="bg-[#31393c] w-full py-2 uppercase font-bold text-white cursor-pointer rounded-lg"
+        className="bg-header w-full py-2 uppercase font-bold text-white cursor-pointer rounded-lg"
         value="Send"
       />
     </form>

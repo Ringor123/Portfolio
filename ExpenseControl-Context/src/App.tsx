@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <header className="bg-[#31393C] py-8 max-h-72">
+      <header className="bg-header py-8 max-h-72">
         <h1 className="uppercase text-center font-bold text-4xl text-white">
           Budget Planner
         </h1>
