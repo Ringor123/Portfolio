@@ -40,7 +40,7 @@ export default function ExpenseList() {
       ) : (
         <>
           <p className="text-2xl font-bold my-5">Expenses List</p>
-          {/* Display total amount spent in the selected category with consistent styling */}
+          {/* Display total amount spent in the selected category */}
           <p className="text-lg text-header mb-4">
             You spent <span className="font-bold">{categoryAmount}</span> on{" "}
             <span className="font-bold uppercase">{selectedCategory}</span>
