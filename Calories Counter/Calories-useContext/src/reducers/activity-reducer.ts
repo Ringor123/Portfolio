@@ -12,7 +12,7 @@ export type ActivityActions =
   | { type: "save-activity"; payload: { newActivity: Activity } }
   | { type: "set-activeId"; payload: { id: Activity["id"] } }
   | { type: "delete-activity"; payload: { id: Activity["id"] } }
-  | { type: "restart-app"}
+  | { type: "restart-app" };
 
 /**
  * State type for the activity reducer
@@ -46,7 +46,7 @@ export const initialState: ActivityState = {
  * Activity Reducer
  * Manages the state of activities in the application
  * Handles creating, updating, and deleting activities
- * 
+ *
  * @param state - Current state of activities
  * @param action - Action to perform on the state
  * @returns New state after applying the action
@@ -95,11 +95,11 @@ export const activityReducer = (
   }
 
   // Reset the app to initial state
-  if (action.type === 'restart-app') {
+  if (action.type === "restart-app") {
     return {
       activities: [],
-      activeId: ""
-    }
+      activeId: "",
+    };
   }
 
   // Return unchanged state for unknown actions

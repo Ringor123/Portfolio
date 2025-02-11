@@ -6,7 +6,7 @@ type ActivitiesContextProps = {
   state: ActivityState;
   caloriesConsumed: number;
   caloriesDiff: number;
-  caloriesBurned: number
+  caloriesBurned: number;
 };
 
 export const ActivitiesContext = createContext<ActivitiesContextProps>(null!);

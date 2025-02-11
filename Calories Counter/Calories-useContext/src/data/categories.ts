@@ -7,6 +7,6 @@ import { Category } from "../types/types";
  * id: 2 - Exercise activities (calories burned)
  */
 export const categories: Category[] = [
-    { id: 1, name: 'Food'},
-    { id: 2, name: 'Exercise'}
-  ]
+  { id: 1, name: "Food" },
+  { id: 2, name: "Exercise" },
+];
