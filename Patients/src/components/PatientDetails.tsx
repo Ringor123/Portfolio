@@ -36,7 +36,7 @@ export default function PatientDetails({ patient }: PatientDetailsProps) {
   }
 
   return (
-    <div className="mx-5 my-5 px-5 py-10 bg-white shadow-md rounded-xl">
+    <div className="mx-5 mb-5 px-5 py-10 bg-white shadow-md rounded-xl">
       
       {/* Display individual patient details using PatientDetailsItem component */}
       <PatientDetailsItem label="Patient: " data={patient.name} />
@@ -46,7 +46,7 @@ export default function PatientDetails({ patient }: PatientDetailsProps) {
       <PatientDetailsItem label="Symptoms: " data={patient.symptoms} />
 
       {/* Action buttons for editing and deleting patient */}
-      <div className="flex flex-col lg:flex-row xl:mx-30 justify-between mt-10 gap-2">
+      <div className="flex flex-col lg:flex-row justify-around mt-10 gap-2">
         <button
           type="button"
           onClick={() => setActiveId(patient.id)}

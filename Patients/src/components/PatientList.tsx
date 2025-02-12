@@ -25,9 +25,11 @@ export default function PatientList() {
             </span>
           </p>
           {/* Map through patients array to render individual patient cards */}
-          {patients.map((patient) => (
-            <PatientDetails key={patient.id} patient={patient} />
-          ))}
+
+            {patients.map((patient) => (
+              <PatientDetails key={patient.id} patient={patient} />
+            ))}
+
         </>
       ) : (
         <>

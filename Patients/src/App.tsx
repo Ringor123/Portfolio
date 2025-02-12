@@ -16,7 +16,7 @@ function App() {
           Patients Tracker {""}
           <span className="text-green-600">Veterinary</span>
         </h1>
-      </div>
+      
 
       {/* Flex container for form and list with responsive layout */}
       <div className="mt-12 md:flex">
@@ -38,6 +38,7 @@ function App() {
         theme="light"
         transition={Bounce}
       />
+      </div>
     </>
   );
 }
