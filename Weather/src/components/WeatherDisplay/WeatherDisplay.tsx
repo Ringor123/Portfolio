@@ -17,7 +17,7 @@ export default function WeatherDisplay({ weather, loading }: WeatherDisplayProps
       </div>
       ) : (
         !weather.name ? (
-          <h2 className={styles.noWeather}>Complete the form to weather</h2>
+          <h2 className={styles.noWeather}>Complete the form to see the weather</h2>
         ) : (
           <>
             <h2 className={styles.cityName}>{weather.name}</h2>
@@ -36,19 +36,19 @@ export default function WeatherDisplay({ weather, loading }: WeatherDisplayProps
             </div>
             <div className={styles.details}>
               <div className={styles.detailItem}>
-                <span className={styles.label}>Mínima:</span>
+                <span className={styles.label}>Min:</span>
                 <span className={styles.value}>
                   {parseTemp(weather.main.temp_min)}°C
                 </span>
               </div>
               <div className={styles.detailItem}>
-                <span className={styles.label}>Máxima:</span>
+                <span className={styles.label}>Max:</span>
                 <span className={styles.value}>
                   {parseTemp(weather.main.temp_max)}°C
                 </span>
               </div>
               <div className={styles.detailItem}>
-                <span className={styles.label}>Humedad:</span>
+                <span className={styles.label}>Humidity:</span>
                 <span className={styles.value}>{weather.main.humidity}%</span>
               </div>
             </div>{" "}
