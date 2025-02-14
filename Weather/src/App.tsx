@@ -6,14 +6,14 @@ import useWeather from "./hooks/useWeather"
 
 function App() {
 
-  const {fetchWeather, weather} = useWeather()
+  const {fetchWeather, weather, loading} = useWeather()
 
   return (
     <>
       <h1 className={styles.title}>Buscador de clima</h1>
       <div className={styles.container}>
         <Form fetchWeather={fetchWeather} />
-        <WeatherDisplay weather={weather} />
+        <WeatherDisplay weather={weather} loading={loading}/>
       </div>
     </>
   )

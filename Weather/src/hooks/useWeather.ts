@@ -4,8 +4,27 @@ import { SearchType } from "../types";
 import { z } from "zod";
 // import * as v from 'valibot'
 
-export default function useWeather() {
-  //Type Guard
+
+//Zod
+  
+const WeatherSchema = z.object({
+  name: z.string(),
+  main: z.object({
+    temp: z.number(),
+    temp_max: z.number(),
+    temp_min: z.number(),
+    humidity: z.number()
+  }),
+  weather: z.array(z.object({
+    main: z.string(),
+    icon: z.string(),
+    description: z.string()
+  }))
+})
+
+export type Weather = z.infer<typeof WeatherSchema>;
+
+//Type Guard
   //
   // const isWeatherResponse = (weather: unknown) : weather is Weather => {
   //   return (
@@ -18,21 +37,6 @@ export default function useWeather() {
   //   )
   // }
   //
-
-
-  //Zod
-  
-  const WeatherSchema = z.object({
-    name: z.string(),
-    main: z.object({
-      temp: z.number(),
-      temp_max: z.number(),
-      temp_min: z.number()
-    })
-  })
-  
-  type Weather = z.infer<typeof WeatherSchema>
-
 
   //Valibot
   //
@@ -47,26 +51,44 @@ export default function useWeather() {
   //
   // type Weather = v.InferOutput<typeof WeatherSchema>
 
+
+export default function useWeather() {
+  
+
   const [weather, setWeather] = useState<Weather>({
     name: '',
     main: {
       temp: 0,
       temp_min: 0,
-      temp_max: 0
-    }
+      temp_max: 0,
+      humidity: 0
+    },
+    weather: [{
+      main: '',
+      icon: '',
+      description: ''
+    }]
   })
 
+  const [loading, setLoading] = useState(false)
+
   const fetchWeather = async (search: SearchType) => {
+    const country = search.country
+    const city = search.city
+
     const apiKey = import.meta.env.VITE_API_KEY;
 
+    setLoading(true)
     try {
-      const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${search.city}&appid=${apiKey}`;
+      const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&appid=${apiKey}`;
       const { data: geoResult } = await axios.get(geoUrl);
 
       const lat = geoResult[0].lat;
       const lon = geoResult[0].lon;
 
       const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+      console.log(weatherUrl)
+      
 
       //Cast Type
       //
@@ -88,6 +110,7 @@ export default function useWeather() {
       // Zod
       
       const {data: weatherResult} = await axios.get(weatherUrl)
+      console.log(weatherResult)
       const result = WeatherSchema.safeParse(weatherResult)
       if(result.success) {
         console.log(result)
@@ -110,11 +133,14 @@ export default function useWeather() {
 
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false)
     }
   };
 
   return {
     fetchWeather,
-    weather
+    weather,
+    loading,
   };
 }

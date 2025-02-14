@@ -1,0 +1,124 @@
+.weatherCard {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  width: 100%;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.cityName {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  color: var(--primary);
+}
+
+.noWeather {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  color: var(--primary);
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weatherIcon {
+  width: 12rem;
+  height: 12rem;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.2));
+}
+
+.temperature {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.description {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.label {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.value {
+  font-weight: bold;
+}
+
+.spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: var(--primary);
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+@media (min-width: 768px) {
+  .weatherCard {
+    margin-top: 0;
+  }
+}
