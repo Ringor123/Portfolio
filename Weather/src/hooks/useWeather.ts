@@ -80,7 +80,7 @@ export default function useWeather() {
 
     setLoading(true)
     try {
-      const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&appid=${apiKey}`;
+      const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&appid=${apiKey}`;
       const { data: geoResult } = await axios.get(geoUrl);
 
       const lat = geoResult[0].lat;
