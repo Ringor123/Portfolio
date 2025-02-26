@@ -1,19 +1,29 @@
-import { useAppStore } from "../stores/useAppStore"
-
+import DrinkCard from "../components/DrinkCard";
+import { useAppStore } from "../stores/useAppStore";
 
 export default function IndexPage() {
+  const { drinks, lastSearchValues } = useAppStore();
 
-  const {recipes} = useAppStore()
+  const hasDrinks = drinks.drinks.length > 0;
 
   return (
-    <div  className="grid grid-cols-3">
-    {recipes.drinks.map((recipe) => (
-      <div>
-      <h1 key={recipe.idDrink}>{recipe.strDrink}</h1>
-      <img className="w-50 " src={recipe.strDrinkThumb} />
-      </div>
-    ))}
-      
-    </div>
-  )
+    <>
+      <h1 className="text-6xl text-center font-extrabold mb-5">Recipes</h1>
+      {hasDrinks ? (
+        <div>
+          <p className="text-center mb-5">
+            Search results for <span>{lastSearchValues.category}</span> with{" "}
+            <span>{lastSearchValues.ingredient}</span>
+          </p>
+          <div className="mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10">
+            {drinks.drinks.map((drink) => (
+              <DrinkCard key={drink.idDrink} drink={drink} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <p className="text-center">Not results yet. Use form to find drinks</p>
+      )}
+    </>
+  );
 }

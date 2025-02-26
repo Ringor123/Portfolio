@@ -1,23 +1,38 @@
-import { getCategories, getRecipes } from "../services/DrinksService"
-import { Categories, Pair, SearchFilter,  } from "../types"
+import { getCategories, getDrinks, getRecipeById } from "../services/DrinksService"
+import { Categories, Drink, Drinks, Recipe, SearchFilter,  } from "../types"
 import { StateCreator } from "zustand"
 
 export type RecipesSliceType = {
   categories: Categories,
-  recipes: SearchFilter,
+  drinks: Drinks,
+  lastSearchValues: SearchFilter,
+  recipe: Recipe,
+  modal: boolean,
   fetchCategories: () => Promise<void>,
-  fetchRecipes: (pair: Pair) => Promise<void>
+  setSearchValues: (searchValues: SearchFilter) => void
+  fetchRecipes: (searchFilter: SearchFilter) => Promise<void>
+  selectRecipe: (id: Drink['idDrink']) => Promise<void>
+  setModal: (modal: boolean) => void
 } 
 
-export const createRecipesSlice : StateCreator<RecipesSliceType> = (set) => ({
+export const createRecipesSlice : StateCreator<RecipesSliceType> = (set, get) => ({
   categories: {
     drinks: []
   },
 
-  recipes: {
+  drinks: {
     drinks: []
   },
+
+  lastSearchValues: {
+    ingredient: '',
+    category: ''
+  },
+
+  recipe: {} as Recipe,
   
+  modal: false,
+
   fetchCategories: async () =>  {
     const categories = await getCategories()
     set(() => ({
@@ -25,10 +40,34 @@ export const createRecipesSlice : StateCreator<RecipesSliceType> = (set) => ({
     }))
   },
 
-  fetchRecipes: async (pair) => {
-    const recipes = await getRecipes(pair)
+  setSearchValues: (lastSearchValues) => {
     set(() => ({
-      recipes
+      lastSearchValues
     }))
+  },
+
+  fetchRecipes: async () => {
+    const drinks = await getDrinks(get().lastSearchValues)
+    set(() => ({
+      drinks
+    }))
+  },
+
+  selectRecipe: async (id) => {
+    const recipe = await getRecipeById(id)
+    set(() => ({
+      recipe
+    }))
+  },
+
+  setModal: (modal) => {
+    set(() => ({
+      modal,
+    }))
+    if (modal === false) {
+      set(() => ({
+        recipe: {} as Recipe
+      }))
+    }
   }
 })

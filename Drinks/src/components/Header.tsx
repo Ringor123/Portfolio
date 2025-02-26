@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import { useAppStore } from "../stores/useAppStore";
-import { Pair } from "../types";
+import { SearchFilter } from "../types";
 import Error from "./Error";
 
 const INITIAL_STATE = {
@@ -11,34 +11,35 @@ const INITIAL_STATE = {
 
 export default function Header() {
 
-  const [pair, setPair] = useState<Pair>(INITIAL_STATE)
+  const [pairSearch, setPairSearch] = useState<SearchFilter>(INITIAL_STATE)
   const [error, setError] = useState('')
-  const { categories, fetchRecipes } = useAppStore();
+  const { categories, fetchRecipes, setSearchValues } = useAppStore();
   const location = useLocation();
 
   const isHome = location.pathname === "/";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
-    setPair({
-      ...pair,
+    setPairSearch({
+      ...pairSearch,
       [e.target.name]: e.target.value
   })
   }
 
-  console.log(pair)
+  console.log(pairSearch)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if(Object.values(pair).includes('')) {
+    if(Object.values(pairSearch).includes('')) {
       const error = 'All fields are required'
       console.log(error)
       setError(error)
       return
     }
-    fetchRecipes(pair)
+    setSearchValues(pairSearch)
+    fetchRecipes(pairSearch)
     setError('')
-    setPair(INITIAL_STATE)
+    setPairSearch(INITIAL_STATE)
   }
 
   return (
@@ -107,7 +108,7 @@ export default function Header() {
                 name="ingredient"
                 placeholder="Type a ingredient"
                 className="bg-white p-3 w-full rounded-lg focus:outline-none"
-                value={pair.ingredient || ''}
+                value={pairSearch.ingredient || ''}
                 onChange={handleChange}
               />
             </div>
@@ -124,7 +125,7 @@ export default function Header() {
                 name="category"
                 className="bg-white p-3 w-full rounded-lg focus:outline-none"
                 onChange={handleChange}
-                value={pair.category || ''}
+                value={pairSearch.category || ''}
               >
                 <option> --- Select Category ---</option>
                 {categories.drinks.map((category) => (
@@ -140,8 +141,7 @@ export default function Header() {
             <input
               type="submit"
               value="Search"
-              className="cursor-pointer bg-red-main transition hover:-translate-y-0.5 hover:shadow-red-main/50 
-              text-white font-extrabold w-full p-2 rounded-lg shadow-lg uppercase"
+              className="btn"
             />
           </form>
         )}

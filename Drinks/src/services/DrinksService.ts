@@ -1,6 +1,6 @@
 import axios from "axios";
-import { CategoriesAPIResponseSchema, SearchFilterSchema,  } from "../schemas/drinks-schema";
-import { Pair } from "../types";
+import { CategoriesAPIResponseSchema, DrinksAPIResponseSchema, RecipeAPIResponseSchema } from "../schemas/drinks-schema";
+import { Drink, SearchFilter } from "../types";
 
 export const getCategories = async () => {
   try {
@@ -23,16 +23,15 @@ export const getCategories = async () => {
   }
 };
 
-
-export const getRecipes = async (pair: Pair) => {
+export const getDrinks = async (filters: SearchFilter) => {
   try {
-    const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${pair.category}&i=${pair.ingredient}`
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${filters.category}&i=${filters.ingredient}`
     const {data} = await axios.get(url)
-    const result = SearchFilterSchema.safeParse(data)
+    const result = DrinksAPIResponseSchema.safeParse(data)
     
     if(result.success) {
-      const recipes = result.data
-      return recipes
+      const drinks = result.data
+      return drinks
     }
 
     if(result.error) {
@@ -40,6 +39,25 @@ export const getRecipes = async (pair: Pair) => {
       return
     }
 
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getRecipeById = async (id: Drink['idDrink']) => {
+  try {
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+    const { data } = await axios.get(url)
+    const result = RecipeAPIResponseSchema.safeParse(data.drinks[0])
+    
+    if(result.success) {
+      const recipe = result.data
+      return recipe
+    }
+
+    if(result.error) {
+      console.log('error al recibir la receta')
+    }
   } catch (error) {
     console.log(error)
   }
