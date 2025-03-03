@@ -1,3 +1,9 @@
+/**
+ * Main page component that displays the search results for drinks.
+ * Renders a grid of DrinkCard components based on the search criteria.
+ * Uses the global app store to access drink data and last search values.
+ */
+
 import DrinkCard from "../components/DrinkCard";
 import { useAppStore } from "../stores/useAppStore";
 
@@ -22,7 +28,7 @@ export default function IndexPage() {
           </div>
         </div>
       ) : (
-        <p className="text-center">Not results yet. Use form to find drinks</p>
+        <p className="text-center">No results. Use the form to find drinks</p>
       )}
     </>
   );

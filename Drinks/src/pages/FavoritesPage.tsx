@@ -1,3 +1,13 @@
+/**
+ * Favorites page that displays user's saved drink recipes.
+ * Features:
+ * - Displays saved favorites from localStorage
+ * - Responsive grid layout matching index page
+ * - Shows placeholder message when no favorites exist
+ * - Reuses DrinkCard component for consistent UI
+ * - Integrates with global app store for favorites management
+ */
+
 import DrinkCard from "../components/DrinkCard";
 import { useAppStore } from "../stores/useAppStore";
 

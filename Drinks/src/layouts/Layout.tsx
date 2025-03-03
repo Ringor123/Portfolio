@@ -1,6 +1,17 @@
+/**
+ * Main layout component that wraps all pages.
+ * Features:
+ * - Common header with navigation and search
+ * - Responsive container for main content
+ * - Global modal for recipe details
+ * - Global notification system
+ * - Uses React Router's Outlet for dynamic content
+ */
+
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
+import Notification from "../components/Notification";
 
 export default function Layout() {
   return (
@@ -10,6 +21,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Modal />
+      <Notification />
     </>
   );
 }

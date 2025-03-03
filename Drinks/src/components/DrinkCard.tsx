@@ -1,8 +1,21 @@
+/**
+ * DrinkCard component displays a single drink in a card format.
+ * Features:
+ * - Displays drink image with loading state
+ * - Shows drink name with truncation for long titles
+ * - Handles click to show detailed recipe in modal
+ * - Includes hover effects on image
+ */
+
 import { useState } from "react";
 import { useAppStore } from "../stores/useAppStore";
 import { Drink } from "../types";
 
+/**
+ * Props for the DrinkCard component
+ */
 type DrinkCardProps = {
+  /** Drink data containing id, name, and image URL */
   drink: Drink;
 };
 

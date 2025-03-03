@@ -1,3 +1,15 @@
+/**
+ * Modal component for displaying detailed drink recipe information.
+ * Features:
+ * - Displays full recipe details including ingredients, measures, and instructions
+ * - Handles adding/removing drinks from favorites
+ * - Shows loading states for both modal content and images
+ * - Implements responsive design with backdrop blur effect
+ * 
+ * Uses Headless UI for accessible dialog implementation and integrates with
+ * the global app store for state management.
+ */
+
 import { useState } from "react";
 import { DialogPanel, DialogTitle, Dialog, Button } from "@headlessui/react";
 import { useAppStore } from "../stores/useAppStore";
@@ -11,6 +23,7 @@ export default function Modal() {
     addToFavorites,
     removeFromFavorites,
     favorites,
+    showNotification
   } = useAppStore();
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -18,6 +31,10 @@ export default function Modal() {
     (recipeFav) => recipeFav.idDrink === recipe.idDrink
   );
 
+  /**
+   * Builds a list of ingredients and their measures from the recipe data.
+   * Handles up to 10 ingredient-measure pairs, filtering out empty values.
+   */
   const renderIngredients = () => {
     const ingredients = [];
     for (let i = 1; i <= 10; i++) {
@@ -35,18 +52,33 @@ export default function Modal() {
     return ingredients;
   };
 
+  /**
+   * Resets modal state and image loading state when closing.
+   */
   const close = () => {
     setModal(false);
     setImageLoading(true);
   };
 
+  /**
+   * Handles adding/removing drinks from favorites and shows appropriate notification.
+   * Automatically closes the modal after the action is completed.
+   */
   const handleClick = () => {
     if (!isFavorite) {
       addToFavorites(recipe);
       setModal(false);
+      showNotification({
+        text: 'Recipe added to favorites',
+        error: false
+      })
     } else {
       removeFromFavorites(recipe);
       setModal(false);
+      showNotification({
+        text: 'Recipe deleted from favorites',
+        error: false
+      })
     }
   };
 

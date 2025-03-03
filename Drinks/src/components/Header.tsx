@@ -1,9 +1,19 @@
+/**
+ * Header component that serves as the main navigation and search interface.
+ * Features:
+ * - Responsive navigation between Index and Favorites pages
+ * - Search form for drinks by ingredient and category (only on home page)
+ * - Dynamic background based on current route
+ * - Form validation with error notifications
+ * - Integration with global app store for search functionality
+ */
+
 import { useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import { useAppStore } from "../stores/useAppStore";
 import { SearchFilter } from "../types";
-import Error from "./Error";
 
+/** Initial state for the search form */
 const INITIAL_STATE = {
   ingredient: '',
   category: ''
@@ -12,8 +22,7 @@ const INITIAL_STATE = {
 export default function Header() {
 
   const [pairSearch, setPairSearch] = useState<SearchFilter>(INITIAL_STATE)
-  const [error, setError] = useState('')
-  const { categories, fetchRecipes, setSearchValues } = useAppStore();
+  const { categories, fetchRecipes, setSearchValues, showNotification } = useAppStore();
   const location = useLocation();
 
   const isHome = location.pathname === "/";
@@ -27,18 +36,25 @@ export default function Header() {
 
   console.log(pairSearch)
 
+  /**
+   * Handles form submission:
+   * - Validates all fields are filled
+   * - Updates global search values
+   * - Triggers API search
+   * - Resets form to initial state
+   */
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if(Object.values(pairSearch).includes('')) {
-      const error = 'All fields are required'
-      console.log(error)
-      setError(error)
+      showNotification({
+        text: 'All fields are required',
+        error: true
+      })
       return
     }
     setSearchValues(pairSearch)
     fetchRecipes(pairSearch)
-    setError('')
     setPairSearch(INITIAL_STATE)
   }
 
@@ -94,7 +110,6 @@ export default function Header() {
           className="md:w-1/2 2xl:w-1/3 bg-yellow-main/80 backdrop-blur-xs my-8 p-10 rounded-lg space-y-6"
           onSubmit={handleSubmit}
           >
-            {error && <Error>{error}</Error>}
             <div className="space-y-4">
               <label
                 htmlFor="ingredient"
@@ -106,7 +121,7 @@ export default function Header() {
                 id="ingredient"
                 type="text"
                 name="ingredient"
-                placeholder="Type a ingredient"
+                placeholder="Type an ingredient"
                 className="bg-white p-3 w-full rounded-lg focus:outline-none"
                 value={pairSearch.ingredient || ''}
                 onChange={handleChange}
@@ -127,7 +142,7 @@ export default function Header() {
                 onChange={handleChange}
                 value={pairSearch.category || ''}
               >
-                <option> --- Select Category ---</option>
+                <option>Select Category</option>
                 {categories.drinks.map((category) => (
                   <option
                     key={category.strCategory}

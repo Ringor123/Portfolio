@@ -1,5 +1,14 @@
+/**
+ * Zod schema definitions for the Cocktail DB API responses and application data structures.
+ * These schemas provide runtime type validation and TypeScript type inference.
+ */
+
 import { z } from 'zod'
 
+/**
+ * Schema for the API response when fetching drink categories.
+ * Each category contains a string name in strCategory field.
+ */
 export const CategoriesAPIResponseSchema = z.object({
   drinks: z.array(
     z.object({
@@ -8,21 +17,39 @@ export const CategoriesAPIResponseSchema = z.object({
   )
 })
 
+/**
+ * Schema for the search filter form data.
+ * Used to validate user inputs when searching for drinks.
+ */
 export const SearchFilterSchema = z.object({
   ingredient: z.string(),
   category: z.string()
 })
 
+/**
+ * Schema for basic drink information returned by search endpoints.
+ * Contains essential drink details for displaying in the drink cards.
+ */
 export const DrinkAPIResponseSchema = z.object({
   strDrink: z.string(),
   strDrinkThumb: z.string(),
   idDrink: z.string()
 })
 
+/**
+ * Schema for the API response when searching drinks.
+ * Returns an array of basic drink information.
+ */
 export const DrinksAPIResponseSchema =  z.object({
   drinks: z.array(DrinkAPIResponseSchema)
 })
 
+/**
+ * Schema for detailed drink recipe information.
+ * Used when fetching individual drink details for the modal view.
+ * Includes ingredients, measures, and preparation instructions.
+ * Note: API returns up to 10 ingredient/measure pairs, all nullable.
+ */
 export const RecipeAPIResponseSchema = z.object({
     idDrink: z.string(),
     strDrink: z.string(),
