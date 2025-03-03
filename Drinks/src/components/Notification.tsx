@@ -45,7 +45,7 @@ export default function Notification() {
                   }
                 </div>
                 <div className="ml-3 w-0 flex-1 pt-0.5">
-                  <p className="text-lg font-bold text-slate-800">Notificación</p>
+                  <p className="text-lg font-bold text-slate-800">Notification</p>
                   <p className="mt-1 text-base text-slate-700">{notification.text}</p>
                 </div>
                 <div className="ml-4 flex flex-shrink-0">
@@ -54,7 +54,7 @@ export default function Notification() {
                     className="inline-flex rounded-md p-1.5 text-slate-700 hover:bg-red-main/10 hover:text-red-main transition-colors duration-200"
                     onClick={resetNotification}
                   >
-                    <span className="sr-only">Cerrar</span>
+                    <span className="sr-only">Close</span>
                     <XMarkIcon className="h-5 w-5" aria-hidden="true" />
                   </button>
                 </div>
