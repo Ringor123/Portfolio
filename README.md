@@ -1,6 +1,6 @@
 # Portfolio de Proyectos Frontend
 
-Este repositorio contiene una colección de proyectos de desarrollo frontend, principalmente construidos con React, TypeScript y diversas tecnologías modernas de gestión de estado y estilizado.
+Este repositorio es una colección de proyectos de desarrollo web, principalmente construidos con React, usando TypeScript y muchas de las tecnologías mas modernas de gestión de estado y diseño.
 
 ## Proyectos
 
