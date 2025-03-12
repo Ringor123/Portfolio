@@ -4,7 +4,7 @@ A modern cryptocurrency price converter built with React and TypeScript. Get rea
 
 ## Live Demo
 
-Visit the live application at: [https://calories-blue.vercel.app/](https://calories-blue.vercel.app/)
+Visit the live application at: [https://crypto-smoky-zeta.vercel.app/](https://crypto-smoky-zeta.vercel.app/)
 
 ## Installation
 
@@ -86,7 +86,7 @@ Un convertidor moderno de precios de criptomonedas construido con React y TypeSc
 
 ## Demo en Vivo
 
-Visita la aplicación en vivo en: [https://calories-blue.vercel.app/](https://calories-blue.vercel.app/)
+Visita la aplicación en vivo en: [https://crypto-smoky-zeta.vercel.app/](https://crypto-smoky-zeta.vercel.app/)
 
 ## Instalación
 
