@@ -2,6 +2,10 @@
 
 A modern e-commerce store built with React and Vite, featuring a custom shopping cart implementation using React hooks. This project demonstrates advanced state management patterns and modern web development practices.
 
+## Live Demo
+
+Visit the live application at: [https://basic-store.vercel.app/](https://basic-store.vercel.app/)
+
 ## Technical Highlights
 
 - Custom [`useCart`](./src/hooks/useCart.js) hook implementing shopping cart functionality
@@ -51,6 +55,10 @@ The `src/hooks` directory contains our custom cart management logic, demonstrati
 # BasicStore con useCart Hook
 
 Una tienda de comercio electrónico moderna construida con React y Vite, que presenta una implementación personalizada del carrito de compras utilizando hooks de React. Este proyecto demuestra patrones avanzados de gestión de estado y prácticas modernas de desarrollo web.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://basic-store.vercel.app/](https://basic-store.vercel.app/)
 
 ## Aspectos Técnicos Destacados
 

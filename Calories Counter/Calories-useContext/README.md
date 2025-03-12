@@ -2,6 +2,10 @@
 
 A modern, TypeScript-based calorie tracking application built with React and Context API. This application demonstrates advanced state management patterns and modern web development practices.
 
+## Live Demo
+
+Visit the live application at: [https://calories-blue.vercel.app/](https://calories-blue.vercel.app/)
+
 ## Technical Highlights
 
 - Built with [React 18](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/)
@@ -71,6 +75,10 @@ The development server will start at `http://localhost:5173` by default.
 # Contador de Calorías
 
 Una aplicación moderna de seguimiento de calorías desarrollada con React y Context API, utilizando TypeScript. Esta aplicación demuestra patrones avanzados de gestión de estado y prácticas modernas de desarrollo web.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://calories-blue.vercel.app/](https://calories-blue.vercel.app/)
 
 ## Aspectos Técnicos Destacados
 

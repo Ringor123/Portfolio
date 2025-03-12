@@ -2,6 +2,10 @@
 
 A modern, responsive calorie tracking application built with React and TypeScript. This application helps users track their daily caloric intake through an intuitive and efficient interface.
 
+## Live Demo
+
+Visit the live application at: [https://calories-blue.vercel.app/](https://calories-blue.vercel.app/)
+
 ## Technical Highlights
 
 - Built with [React 18](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/), leveraging modern features like the [`useReducer`](https://react.dev/reference/react/useReducer) hook for state management
@@ -67,6 +71,10 @@ The development server will start at `http://localhost:5173` by default.
 # Aplicación Contador de Calorías
 
 Una aplicación moderna y responsiva para el seguimiento de calorías construida con React y TypeScript. Esta aplicación ayuda a los usuarios a realizar un seguimiento de su ingesta calórica diaria a través de una interfaz intuitiva y eficiente.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://calories-blue.vercel.app/](https://calories-blue.vercel.app/)
 
 ## Aspectos Técnicos Destacados
 
