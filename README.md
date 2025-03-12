@@ -1,4 +1,4 @@
-# Portfolio de Proyectos Frontend
+# Portfolio de Desarrollo Web
 
 Este repositorio es una colección de proyectos de desarrollo web, principalmente construidos con React, usando TypeScript y muchas de las tecnologías mas modernas de gestión de estado y diseño.
 
