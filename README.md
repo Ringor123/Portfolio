@@ -45,6 +45,6 @@ Una aplicación de gestión de productos con arquitectura cliente-servidor:
 
 ## Propósito
 
-Este portfolio demuestra mi experiencia con diversas tecnologías frontend y patrones de diseño, mostrando diferentes enfoques para resolver problemas similares utilizando las mejores prácticas de desarrollo.
+Este portafolio es una pequeña muestra de mi experciencia con diferentes tecnologías frontend y patrones de diseño, además de mostrar diferentes tecnologías para resolver problemas similares utilizando las mejores prácticas de desarrollo.
 
-Cada proyecto está contenido en su propio directorio y puede ser ejecutado independientemente siguiendo las instrucciones en sus respectivos README.
+Cada proyecto está dentro de su propio directorio y puede ser ejecutado independientemente siguiendo las instrucciones de sus respectivos README.
