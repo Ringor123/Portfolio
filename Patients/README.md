@@ -2,6 +2,10 @@
 
 A modern, responsive patient management application built with React and TypeScript. This application demonstrates the implementation of modern web development practices and state-of-the-art frontend technologies.
 
+## Live Demo
+
+Visit the live application at: [https://patients-drab.vercel.app/](https://patients-drab.vercel.app/)
+
 ## Technical Highlights
 
 - Built with [React 19](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/)
@@ -54,6 +58,10 @@ The development server will start at `http://localhost:5173`
 # Sistema de Gestión de Pacientes
 
 Una aplicación moderna y responsive para la gestión de pacientes construida con React y TypeScript. Esta aplicación demuestra la implementación de prácticas modernas de desarrollo web y tecnologías frontend de última generación.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://patients-drab.vercel.app/](https://patients-drab.vercel.app/)
 
 ## Aspectos Técnicos Destacados
 
