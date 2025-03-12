@@ -2,6 +2,10 @@
 
 A modern expense tracking application built with React and TypeScript, featuring real-time budget management and category-based expense organization. This application demonstrates advanced React patterns and modern web development practices.
 
+## Live Demo
+
+Visit the live application at: [https://expense-control-xi.vercel.app/](https://expense-control-xi.vercel.app/)
+
 ## Key Technical Features
 
 - Built with [React 19](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/)
@@ -76,6 +80,10 @@ npm run preview
 # Aplicación de Control de Gastos
 
 Una aplicación moderna de seguimiento de gastos construida con React y TypeScript, que ofrece gestión de presupuesto en tiempo real y organización de gastos basada en categorías. Esta aplicación demuestra patrones avanzados de React y prácticas modernas de desarrollo web.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://expense-control-xi.vercel.app/](https://expense-control-xi.vercel.app/)
 
 ## Características Técnicas Principales
 
