@@ -31,17 +31,11 @@ Una aplicación para gestión de pacientes desarrollada con React, TypeScript y 
 ### Weather
 Una aplicación del clima que muestra información meteorológica, desarrollada con React y TypeScript.
 
-### Product Management
-Una aplicación de gestión de productos con arquitectura cliente-servidor:
-- **Frontend**: Desarrollado con React, TypeScript y Tailwind CSS
-- **Backend**: Desarrollado con Node.js y TypeScript
-
 ## Tecnologías Utilizadas
 
 - **Frontend**: React, TypeScript, Vite, Tailwind CSS
 - **Gestión de Estado**: Context API, useReducer, Zustand
 - **Estilizado**: Tailwind CSS
-- **Backend** (en algunos proyectos): Node.js, Express, TypeScript
 
 ## Propósito
 
