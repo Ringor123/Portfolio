@@ -1,6 +1,6 @@
-# Portfolio de Proyectos Frontend
+# Portfolio de Desarrollo Web
 
-Este repositorio contiene una colección de proyectos de desarrollo frontend, principalmente construidos con React, TypeScript y diversas tecnologías modernas de gestión de estado y estilizado.
+Este repositorio es una colección de proyectos de desarrollo web, principalmente construidos con React, usando TypeScript y muchas de las tecnologías mas modernas de gestión de estado y diseño.
 
 ## Proyectos
 
@@ -31,20 +31,14 @@ Una aplicación para gestión de pacientes desarrollada con React, TypeScript y 
 ### Weather
 Una aplicación del clima que muestra información meteorológica, desarrollada con React y TypeScript.
 
-### Product Management
-Una aplicación de gestión de productos con arquitectura cliente-servidor:
-- **Frontend**: Desarrollado con React, TypeScript y Tailwind CSS
-- **Backend**: Desarrollado con Node.js y TypeScript
-
 ## Tecnologías Utilizadas
 
 - **Frontend**: React, TypeScript, Vite, Tailwind CSS
 - **Gestión de Estado**: Context API, useReducer, Zustand
 - **Estilizado**: Tailwind CSS
-- **Backend** (en algunos proyectos): Node.js, Express, TypeScript
 
 ## Propósito
 
-Este portfolio demuestra mi experiencia con diversas tecnologías frontend y patrones de diseño, mostrando diferentes enfoques para resolver problemas similares utilizando las mejores prácticas de desarrollo.
+Este portafolio es una pequeña muestra de mi experciencia con diferentes tecnologías frontend y patrones de diseño, además de mostrar diferentes tecnologías para resolver problemas similares utilizando las mejores prácticas de desarrollo.
 
-Cada proyecto está contenido en su propio directorio y puede ser ejecutado independientemente siguiendo las instrucciones en sus respectivos README.
+Cada proyecto está dentro de su propio directorio y puede ser ejecutado independientemente siguiendo las instrucciones de sus respectivos README.
