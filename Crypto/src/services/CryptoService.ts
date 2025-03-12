@@ -16,7 +16,7 @@ import { Pair } from "../types";
  */
 export const getCryptos = async () => {
   try {
-    const cryptoUrl = `https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD`;
+    const cryptoUrl = `https://min-api.cryptocompare.com/data/top/price?limit=20&tsym=USD`;
     const {
       data: { Data },
     } = await axios.get(cryptoUrl);
