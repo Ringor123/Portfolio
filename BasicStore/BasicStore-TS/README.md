@@ -2,6 +2,10 @@
 
 A modern e-commerce prototype built with React, TypeScript, and Zustand, showcasing modern web development practices and state management patterns.
 
+## Live Demo
+
+Visit the live application at: [https://basic-store.vercel.app/](https://basic-store.vercel.app/)
+
 ## Technical Highlights
 
 - Built with [React 18](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/), leveraging strict type safety
@@ -60,6 +64,10 @@ npm run preview
 # BasicStore-TS (Español)
 
 Un prototipo de comercio electrónico moderno construido con React, TypeScript y Zustand, que muestra prácticas modernas de desarrollo web y patrones de gestión de estado.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://basic-store.vercel.app/](https://basic-store.vercel.app/)
 
 ## Aspectos Técnicos Destacados
 
