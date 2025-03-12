@@ -2,6 +2,10 @@
 
 A modern React e-commerce prototype showcasing state management with Zustand and modern web development practices.
 
+## Live Demo
+
+Visit the live application at: [https://basic-store.vercel.app/](https://basic-store.vercel.app/)
+
 ## Key Features & Technologies
 
 ### Core Technologies
@@ -82,6 +86,10 @@ The development server will start at `http://localhost:5173` by default.
 # BasicStore-Zustand (Español)
 
 Un prototipo moderno de comercio electrónico en React que demuestra la gestión de estado con Zustand y prácticas modernas de desarrollo web.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://basic-store.vercel.app/](https://basic-store.vercel.app/)
 
 ## Características y Tecnologías Principales
 
