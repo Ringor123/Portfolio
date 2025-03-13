@@ -2,6 +2,10 @@
 
 A modern cryptocurrency price converter built with React and TypeScript. Get real-time cryptocurrency prices and statistics using the CryptoCompare API.
 
+## Live Demo
+
+Visit the live application at: [https://crypto-smoky-zeta.vercel.app/](https://crypto-smoky-zeta.vercel.app/)
+
 ## Installation
 
 ```bash
@@ -79,6 +83,10 @@ Uses the [CryptoCompare API](https://min-api.cryptocompare.com/) for real-time c
 # Convertidor de Precios de Criptomonedas
 
 Un convertidor moderno de precios de criptomonedas construido con React y TypeScript. Obtén precios y estadísticas de criptomonedas en tiempo real usando la API de CryptoCompare.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://crypto-smoky-zeta.vercel.app/](https://crypto-smoky-zeta.vercel.app/)
 
 ## Instalación
 

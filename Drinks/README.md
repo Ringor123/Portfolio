@@ -4,6 +4,10 @@
 
 A modern React application for exploring drink recipes using [TheCocktailDB API](https://www.thecocktaildb.com/api.php). Built with TypeScript and modern web technologies.
 
+## Live Demo
+
+Visit the live application at: [https://drinks-eight.vercel.app/](https://drinks-eight.vercel.app/)
+
 ### Technical Highlights
 
 - State Management using [Zustand](https://github.com/pmndrs/zustand) with sliced stores for modular state organization
@@ -58,6 +62,10 @@ The application will be available at `http://localhost:5173`
 ## Español
 
 Una aplicación moderna en React para explorar recetas de bebidas usando [TheCocktailDB API](https://www.thecocktaildb.com/api.php). Construida con TypeScript y tecnologías web modernas.
+
+## Demo en Vivo
+
+Visita la aplicación en vivo en: [https://drinks-eight.vercel.app/](https://drinks-eight.vercel.app/)
 
 ### Aspectos Técnicos Destacados
 
