@@ -1,5 +1,10 @@
+import { Product } from "../types";
 
-export default function ProductForm() {
+type ProductFormProps = {
+  product?: Product
+}
+
+export default function ProductForm({product}: ProductFormProps) {
   return (
     <>
      <div className="mb-4">
@@ -12,7 +17,7 @@ export default function ProductForm() {
             className="mt-2 block w-full p-3 bg-gray-50 border border-gray-200 rounded-md outline-none focus:ring-1 focus:ring-indigo-300"
             placeholder="Product Name"
             name="name"
-            defaultValue={product.name}
+            defaultValue={product && product.name}
           />
         </div>
         <div className="mb-4">
@@ -26,7 +31,7 @@ export default function ProductForm() {
             className="mt-2 block w-full p-3 bg-gray-50 border border-gray-200 rounded-md outline-none focus:ring-1 focus:ring-indigo-300"
             placeholder="Product Price. ej. 200, 300"
             name="price"
-            defaultValue={product.price}
+            defaultValue={product && product.price}
           />
         </div>
     </>

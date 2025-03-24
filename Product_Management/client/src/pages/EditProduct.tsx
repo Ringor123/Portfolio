@@ -11,6 +11,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import { editProduct, getProductById } from "../services/ProductService";
 import { Zoom, toast } from "react-toastify";
 import { Product } from "../types";
+import ProductForm from "../components/ProductForm";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -29,6 +30,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 // eslint-disable-next-line react-refresh/only-export-components
 export const action = async ({ request, params }: ActionFunctionArgs) => {
   const data = Object.fromEntries(await request.formData());
+  console.log(data)
 
   let error = "";
   if (Object.values(data).includes("")) {
@@ -37,7 +39,7 @@ export const action = async ({ request, params }: ActionFunctionArgs) => {
   }
   if (params.id !== undefined) {
     await editProduct(data, Number(params.id));
-    toast.success("New product edited successfully!", {
+    toast.success(`Product ${data} edited successfully!`, {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -83,33 +85,8 @@ export default function EditProduct() {
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
       <Form className="mt-10" method="PUT">
-        <div className="mb-4">
-          <label className="text-gray-800" htmlFor="name">
-            Product name:
-          </label>
-          <input
-            id="name"
-            type="text"
-            className="mt-2 block w-full p-3 bg-gray-50 border border-gray-200 rounded-md outline-none focus:ring-1 focus:ring-indigo-300"
-            placeholder="Product Name"
-            name="name"
-            defaultValue={product.name}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="text-gray-800" htmlFor="price">
-            Price:
-          </label>
-          <input
-            id="price"
-            type="number"
-            step="0.01"
-            className="mt-2 block w-full p-3 bg-gray-50 border border-gray-200 rounded-md outline-none focus:ring-1 focus:ring-indigo-300"
-            placeholder="Product Price. ej. 200, 300"
-            name="price"
-            defaultValue={product.price}
-          />
-        </div>
+        <ProductForm product={product} />
+
         <div className="mb-4">
           <label className="text-gray-800" htmlFor="availability">
             Availability:

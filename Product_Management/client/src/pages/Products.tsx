@@ -1,7 +1,8 @@
-import { Link, useLoaderData } from "react-router-dom";
-import { getAllProducts } from "../services/ProductService";
+import { ActionFunctionArgs, Link, useLoaderData } from "react-router-dom";
+import { getAllProducts, updateAvailability } from "../services/ProductService";
 import { Product } from "../types";
 import ProductDetails from "../components/ProductDetails";
+import { toast, Zoom } from "react-toastify";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const loader = async () => {
@@ -9,6 +10,28 @@ export const loader = async () => {
 
   return products;
 };
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const action = async ({request}: ActionFunctionArgs) => {
+  const data = Object.fromEntries(await request.formData());
+  console.log(data)
+
+  if(data.id) {
+    await updateAvailability(Number(data.id))
+  }
+
+  toast.success("Availability updated successfully!", {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Zoom,
+  });
+}
 
 export default function Products() {
   const data: Product[] = useLoaderData();
