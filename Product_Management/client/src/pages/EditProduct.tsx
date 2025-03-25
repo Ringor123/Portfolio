@@ -39,7 +39,7 @@ export const action = async ({ request, params }: ActionFunctionArgs) => {
   }
   if (params.id !== undefined) {
     await editProduct(data, Number(params.id));
-    toast.success(`Product ${data} edited successfully!`, {
+    toast.success(`Product edited successfully!`, {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,

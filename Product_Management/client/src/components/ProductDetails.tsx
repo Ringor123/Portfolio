@@ -45,7 +45,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       <td className="text-sm sm:text-lg text-gray-800">
         {formatCurrency(product.price)}
       </td>
-      <td className="p-3 text-lg text-gray-800">
+      <td className="p-2 text-lg text-gray-800">
 
         <fetcher.Form method="POST">
         <button
@@ -63,7 +63,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </fetcher.Form>
         
       </td>
-      <td className="p-3 text-lg text-gray-800">
+      <td className="p-2 text-lg text-gray-800">
         <div className="flex gap-2 justify-center items-center flex-col lg:flex-row">
           <button
             type="button"
@@ -77,7 +77,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 // }
               )
             }
-            className="bg-blue-500 px-3 py-1 lg:px-4 w-full lg:w-24 rounded-lg text-white text-sm lg:text-base cursor-pointer"
+            className="bg-blue-500 px-2 py-1 lg:px-4 w-full lg:w-24 rounded-lg text-white text-sm lg:text-base cursor-pointer"
           >
             Edit
           </button>
@@ -94,7 +94,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           >
             <button
               type="submit"
-              className="bg-red-500 px-3 py-1 lg:px-4 w-full lg:w-24 rounded-lg text-white text-sm lg:text-base cursor-pointer"
+              className="bg-red-500 px-2 py-1 lg:px-4 w-full lg:w-24 rounded-lg text-white text-sm lg:text-base cursor-pointer"
             >
               Delete
             </button>
